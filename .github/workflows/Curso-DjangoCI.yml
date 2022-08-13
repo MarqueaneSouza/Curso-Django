@@ -22,14 +22,13 @@ jobs:
           python-version: '3.10'
       - name: instalando dependências
         run: |
-          pip install pipenv
-          pipenv sync -d
           cp contrib/env-sample .env
+          pip install -r requirements.txt
       - name: flake8
-        run:  pipenv run flake8
+        run:  flake8
       - name: test
-        run: pipenv run pytest --cov=pypro
+        run: pytest --cov=pypro
       - name: codecov
         env:
           CODECOV_TOKEN: "40032b70-e939-4580-bf19-89789f45b262"
-        run: pipenv run codecov
+        run: codecov
