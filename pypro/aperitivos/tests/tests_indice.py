@@ -13,9 +13,15 @@ def test_status_code(resp):
     assert resp.status_code == 200
 
 
-def test_titulo_video(resp):
-    assert_contains(resp, 'Video Aperitivo: Motivacao')
+@pytest.mark.parametrize(
+    'titulo',
+    [
+        'Video Aperitivo: Motivacao',
+        'Instalacao Windows'
+    ]
+)
+def test_titulo_video(resp, titulo):
+    assert_contains(resp, titulo)
 
-
-def test_conteudo_video(resp):
-    assert_contains(resp, '<iframe width="560" height="315"')
+# def test_conteudo_video(resp):
+#     assert_contains(resp, '<iframe width="560" height="315"')
