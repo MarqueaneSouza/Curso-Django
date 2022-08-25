@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  database:
+    container_name: curso-django2022-database
+    image: postgres
+    restart: always
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
+    environment:
+      - LC_ALL=C.UTF-8
+      - POSTGRES_PASSWORD=marqueane
+      - POSTGRES_USER=cursodjango2022
+      - POSTGRES_DB=cursodjango
+    ports:
+      - 5434:5432
