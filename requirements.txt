@@ -43,4 +43,6 @@ tzdata==2022.1
 urllib3==1.26.10
 model-bakery==1.7.0
 django-ordered-model==3.6
+ipython==8.5.0
+django-extensions==3.2.1
 
