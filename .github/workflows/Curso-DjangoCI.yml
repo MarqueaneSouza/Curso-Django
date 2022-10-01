@@ -26,7 +26,7 @@ jobs:
           cp contrib/env-sample .env
       - name: flake8
         run:  flake8
-      - name: test
+      - name: tests
         run: pytest --cov=pypro
       - name: codecov
         env:
